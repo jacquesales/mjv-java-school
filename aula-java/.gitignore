@@ -1,0 +1,15 @@
+*.log
+*.zip
+*.class
+*.swp
+*.iml
+*.idea
+.classpath
+.project
+.settings
+.metadata
+target
+build
+out
+bin
+
