@@ -1,13 +1,27 @@
-import java.time.LocalDateTime;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.nio.charset.StandardCharsets;
 
 public class GeradorArquivo {
 
-    public static void main(String[] args) {
+    public void escreverDisco(String conteudoGerado) {
+        LocalDate now = LocalDate.now();
+        String nomeArquivo = now.toString() + ".txt";
 
-        Movimentacao mov1 = new Movimentacao();
-        mov1.setDataHora(LocalDateTime.now());
+        try {
+            File diretorio = new File("c:\\estudos\\banco_central\\movimentacoes\\");
+            if (! diretorio.exists())
+                diretorio.mkdirs();
 
-        System.out.println(mov1.getDataHora());
+            Path path = Paths.get(diretorio.getAbsolutePath() + nomeArquivo);
+            Files.write(path, conteudoGerado.getBytes(StandardCharsets.UTF_8));
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
