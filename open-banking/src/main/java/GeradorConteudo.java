@@ -5,7 +5,13 @@ public class GeradorConteudo {
         StringBuilder sb = new StringBuilder();
 
         sb.append(movimentacao.getDataHora().toString().replace("-", ""));
-        sb.append(String.format("%014d", Long.valueOf(movimentacao.getCpfCnpj().replaceAll("[^a-zA-Z0-9]", ""))));
+
+        String cpf = movimentacao.getCpfCnpj().replaceAll("[^a-zA-Z0-9]", "");
+        Long cpfLong = Long.valueOf(cpf);
+        String cpfFormatado = String.format("%014d", cpfLong);
+        sb.append(cpfFormatado);
+        //exemplo anterior de um código mais sucinto:
+        //sb.append(String.format("%014d", Long.valueOf(movimentacao.getCpfCnpj().replaceAll("[^a-zA-Z0-9]", ""))));
 
         String nome = movimentacao.getNomeCliente();
         
@@ -24,6 +30,7 @@ public class GeradorConteudo {
         else {
             sb.append(0);
         }
+
         return sb.toString();
     }
 }
