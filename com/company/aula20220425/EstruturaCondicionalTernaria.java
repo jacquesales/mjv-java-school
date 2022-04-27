@@ -7,7 +7,7 @@ public class EstruturaCondicionalTernaria {
         simuladorDecolagem(5000);
     }
 
-    //fluxo de atribuição (um valor ou outro); e não comportamental (o fluxo não é redirecionado)
+    //fluxo de atribuição (um valor ou outro) e não comportamental (o fluxo não é redirecionado)
     static void simuladorDecolagem(int altitude) {
 
         String estagioVoo = (altitude >= 5000) ? "voo estável" : ((altitude < 5000 && altitude >= 5) ? "subindo..." : "não decolou");
