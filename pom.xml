@@ -19,7 +19,6 @@
     <modules>
         <module>open-banking</module>
         <module>agua-luz-notification</module>
-        <module>agua-luz-notification</module>
     </modules>
 
     <properties>
