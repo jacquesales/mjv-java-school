@@ -13,5 +13,6 @@ public class Cadastro {
     private String rg;
     private String nome;
     private long celular;
+    private Endereco endereco;
 
 }
