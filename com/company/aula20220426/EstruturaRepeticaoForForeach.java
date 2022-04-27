@@ -1,4 +1,4 @@
-package com.company.aula20220425;
+package com.company.aula20220426;
 
 public class EstruturaRepeticaoForForeach {
     public static void main(String[] args) {
