@@ -1,19 +1,22 @@
+package app;
+
 import domain.Cadastro;
 import domain.Contrato;
 import domain.Endereco;
 import domain.enums.TipoNotificacao;
 import domain.enums.TipoServico;
+import services.GerarNotificacao;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class NotificarContrato {
+public class SistemaAguaLuzNotification {
 
     public static void main(String[] args) {
 
         Endereco endereco = new Endereco();
         endereco.setLogradouro("Rua Anita Malfatti");
-        endereco.setNumero(108);
+        endereco.setNumero("108");
         endereco.setComplemento("Casa 2");
         endereco.setBairro("Centro");
         endereco.setCidade("São Paulo");
@@ -36,7 +39,7 @@ public class NotificarContrato {
         contrato.setTipoNotificacao(TipoNotificacao.SMS);
         contrato.setCadastro(cadastro);
 
-        FormatarNotificacao formatarNotificacao = new FormatarNotificacao();
+        GerarNotificacao formatarNotificacao = new GerarNotificacao();
         formatarNotificacao.mensagem(contrato);
 
     }
