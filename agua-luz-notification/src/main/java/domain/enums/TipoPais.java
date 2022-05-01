@@ -3,7 +3,7 @@ package domain.enums;
 public enum TipoPais {
 
     BRASIL("BR"),
-    CHILE ("BR"),
+    CHILE ("CL"),
     ESTADOSUNIDOS ("US"),
     GRECIA ("GR");
 
