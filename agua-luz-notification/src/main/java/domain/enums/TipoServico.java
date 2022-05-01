@@ -2,24 +2,28 @@ package domain.enums;
 
 public enum TipoServico {
 
-    AGUA ("A"),
-    LUZ ("L");
+    AGUA ("A", "Água", 137.21),
+    LUZ ("L", "Energia", 132.15);
 
     private final String sigla;
+    private final String nome;
+    private final Double valor;
 
-    TipoServico(String sigla) {
+    TipoServico(String sigla, String nome, Double valor) {
         this.sigla = sigla;
+        this.nome = nome;
+        this.valor = valor;
     }
 
     public String getSigla() {
         return sigla;
     }
 
-    public double valorServico(String sigla) {
-        if (sigla == "A") {
-            return 137.21;
-        } else {
-            return 132.15;
-        }
+    public String getNome() {
+        return nome;
+    }
+
+    public Double getValor() {
+        return valor;
     }
 }
