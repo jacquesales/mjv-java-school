@@ -16,7 +16,7 @@ public class GerarNotificacao {
         sb.append(String.format("Informamos que conforme contrato com protocolo de número %d ",contrato.getProtocolo()));
         sb.append(String.format("está agendado para a data/hora %s %sh a instalação ",contrato.getData(),contrato.getHora()));
         sb.append(String.format("do serviço de %s com taxa de ",contrato.getTipoServico()));
-        sb.append(String.format("valor R$ %s em sua residência localizada no endereço abaixo: \n ",contrato.getTipoServico().valorServico(contrato.getTipoServico().getSigla())));
+        sb.append(String.format("valor R$ %s em sua residência localizada no endereço abaixo: \n ",contrato.getTipoServico().getValor()));
 
         sb.append("\nLogradouro: "  + contrato.getCadastro().getEndereco().getLogradouro() + ", " + contrato.getCadastro().getEndereco().getNumero());
         sb.append("\nComplemento: " + contrato.getCadastro().getEndereco().getComplemento());
