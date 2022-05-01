@@ -4,6 +4,7 @@ import domain.Cadastro;
 import domain.Contrato;
 import domain.Endereco;
 import domain.enums.TipoNotificacao;
+import domain.enums.TipoPais;
 import domain.enums.TipoServico;
 import services.GerarNotificacao;
 
@@ -22,6 +23,7 @@ public class SistemaAguaLuzNotification {
         endereco.setCidade("São Paulo");
         endereco.setUf("SP");
         endereco.setCep("01.311-260");
+        endereco.setPais(TipoPais.BRASIL);
 
         Cadastro cadastro = new Cadastro();
         cadastro.setCpf("123.456.789-00");
@@ -35,7 +37,6 @@ public class SistemaAguaLuzNotification {
         contrato.setData(LocalDate.now());
         contrato.setHora(LocalTime.now());
         contrato.setTipoServico(TipoServico.AGUA);
-        contrato.setValor(contrato.getTipoServico().valorServico(contrato.getTipoServico().getSigla()));
         contrato.setTipoNotificacao(TipoNotificacao.SMS);
         contrato.setCadastro(cadastro);
 
