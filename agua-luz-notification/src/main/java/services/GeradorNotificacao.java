@@ -4,9 +4,9 @@ import domain.Cadastro;
 import domain.Contrato;
 import util.FormatadorUtil;
 
-public class GerarNotificacao {
+public class GeradorNotificacao {
 
-    public void mensagem(Contrato contrato) {
+    public void gerarMensagem(Contrato contrato) {
 
         StringBuilder sb = new StringBuilder();
         Cadastro cliente = contrato.getCadastro();
@@ -14,7 +14,7 @@ public class GerarNotificacao {
         
         sb.append(String.format("Senhor(a) %s, CPF de número %s. ",cliente.getNome(),cpfFormatado));
         sb.append(String.format("Informamos que conforme contrato com protocolo de número %d ",contrato.getProtocolo()));
-        sb.append(String.format("está agendado para a data/hora %s %sh a instalação ",contrato.getData(),contrato.getHora()));
+        sb.append(String.format("está agendado para a data/hora %s a instalação ",contrato.getDataHora()));
         sb.append(String.format("do serviço de %s com taxa de ",contrato.getTipoServico()));
         sb.append(String.format("valor R$ %s em sua residência localizada no endereço abaixo: \n ",contrato.getTipoServico().getValor()));
 
