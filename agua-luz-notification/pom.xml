@@ -14,5 +14,13 @@
     <artifactId>agua-luz-notification</artifactId>
     <version>1.0</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.mjv</groupId>
+            <artifactId>agua-luz-atracao</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+
 </project>
 
