@@ -6,44 +6,38 @@ import domain.Endereco;
 import domain.enums.TipoNotificacao;
 import domain.enums.TipoPais;
 import domain.enums.TipoServico;
-
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDateTime;
 
 public class ContratoRepository {
 
-    private List<Contrato> contratos = new ArrayList<>();
+    private Contrato contrato = new Contrato();
 
-    //método que simula a listagem de contratos vindos do banco de dados
-    public List<Contrato> listar() {
+    //método que simula um contrato vindo do banco de dados
+    public Contrato exibirContrato() {
         Endereco endereco = new Endereco();
-        endereco.setLogradouro("Rua Anita Malfatti");
-        endereco.setNumero("108");
-        endereco.setComplemento("Casa 2");
-        endereco.setBairro("Centro");
-        endereco.setCidade("São Paulo");
-        endereco.setUf("SP");
-        endereco.setCep("01.311-260");
+        endereco.setLogradouro("Rua Sebastião Firmino");
+        endereco.setNumero("123");
+        endereco.setComplemento("AP 210 BL CENTAURO");
+        endereco.setBairro("São Sebastião");
+        endereco.setCidade("São Raimundo Nonato");
+        endereco.setUf("Sp");
+        endereco.setCep("07.210.715");
         endereco.setPais(TipoPais.BRASIL);
 
         Cadastro cadastro = new Cadastro();
-        cadastro.setCpf("123.456.789-00");
-        cadastro.setRg("12345678-9");
-        cadastro.setNome("Maria Julia Santos");
-        cadastro.setCelular(11991234567L);
+        cadastro.setCpf("7.324.223.21");
+        cadastro.setRg("33765-9");
+        cadastro.setNome("Raimundo Nonato Loureiro Castelo Branco");
+        cadastro.setCelular("(11) 99768-1515");
         cadastro.setEndereco(endereco);
 
         Contrato contrato = new Contrato();
-        contrato.setProtocolo(2022025687);
-        contrato.setData(LocalDate.now());
-        contrato.setHora(LocalTime.now());
+        contrato.setProtocolo(1984365);
+        contrato.setDataHora(LocalDateTime.of(2022,5,2,15,21));
         contrato.setTipoServico(TipoServico.AGUA);
         contrato.setTipoNotificacao(TipoNotificacao.SMS);
         contrato.setCadastro(cadastro);
 
-        contratos.add(contrato);
-        return contratos;
+        return contrato;
     }
 }
