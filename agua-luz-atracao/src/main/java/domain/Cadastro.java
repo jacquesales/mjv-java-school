@@ -12,7 +12,7 @@ public class Cadastro {
     private String cpf;
     private String rg;
     private String nome;
-    private long celular;
+    private String celular;
     private Endereco endereco;
 
 }
