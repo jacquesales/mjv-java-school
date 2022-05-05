@@ -13,7 +13,15 @@ public enum TipoPais {
         this.sigla = sigla;
     }
 
-    public String getsigla() {
+    public String getSigla() {
         return sigla;
+    }
+
+    public static TipoPais getPaisPorSigla(String sigla) {
+        for (TipoPais p: TipoPais.values()) { //array que representa todos os enums
+            if(p.getSigla().equals(sigla))
+                return p;
+        }
+        return null;
     }
 }
