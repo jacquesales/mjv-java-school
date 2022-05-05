@@ -26,4 +26,12 @@ public enum TipoServico {
     public Double getValor() {
         return valor;
     }
+
+    public static TipoServico getServicoPorSigla(String sigla) {
+        for (TipoServico s: TipoServico.values()) { //array que representa todos os enums
+            if(s.getSigla().equals(sigla))
+                return s;
+        }
+        return null;
+    }
 }
