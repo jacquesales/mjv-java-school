@@ -2,19 +2,16 @@ package domain;
 
 import domain.enums.TipoNotificacao;
 import domain.enums.TipoServico;
+import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.ToString;
-
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Getter
 @ToString
 public class Contrato {
 
     private long protocolo;
-    private LocalDate data;
-    private LocalTime hora;
+    private LocalDateTime dataHora;
     private Double valor;
     private TipoServico tipoServico;
     private TipoNotificacao tipoNotificacao;
@@ -24,18 +21,19 @@ public class Contrato {
         this.protocolo = protocolo;
     }
 
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
-
-    public void setHora(LocalTime hora) {
-        this.hora = hora;
+    public void setDataHora(LocalDateTime dataHora) {
+        this.dataHora = dataHora;
     }
 
     //encapsulando o valor na definição de serviço do objeto
     public void setTipoServico(TipoServico tipoServico) {
         this.tipoServico = tipoServico;
         this.valor = tipoServico.getValor();
+    }
+
+    //precisa setar para retornar do banco de dados
+    public void setValor(Double valor) {
+        this.valor = valor;
     }
 
     public void setTipoNotificacao(TipoNotificacao tipoNotificacao) {
